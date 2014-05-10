@@ -7,6 +7,7 @@ env:
 install:
     - pip install --upgrade setuptools
     - pip install tox
+    - pip install babel
 
 script:
     - tox --hashseed 0 -e $TOX_ENV
