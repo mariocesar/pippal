@@ -15,12 +15,19 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 """
 
-import sys
-from pippal.command import Command
+from optparse import OptionParser
 
-__version__ = "0.1.dev1"
+usage = "usage: %prog"
 
+class Command:
+    parser = OptionParser(
+        usage=usage,
+        version='%prog 0.1.dev1',
+        description="With Pippal manage your python packages easily and with style.",
+        epilog=("Contribute to this project, report bugs, ask for features "
+                "and get the latest features visiting: "
+                "https://github.com/mariocesar/pippa.")
+    )
 
-def main():
-    command = Command()
-    return command.run()
+    def run(self):
+        (options, args) = self.parser.parse_args()

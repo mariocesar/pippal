@@ -16,11 +16,8 @@ GNU General Public License for more details.
 """
 
 import sys
-from pippal.command import Command
 
-__version__ = "0.1.dev1"
+import pippal
 
-
-def main():
-    command = Command()
-    return command.run()
+if __name__ == '__main__':
+    sys.exit(pippal.main())
