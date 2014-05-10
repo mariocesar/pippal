@@ -1,0 +1,12 @@
+language: python
+
+env:
+    - TOX_ENV=py27
+    - TOX_ENV=py32
+
+install:
+    - pip install --upgrade setuptools
+    - pip install tox
+
+script:
+    - tox --hashseed 0 -e $TOX_ENV
