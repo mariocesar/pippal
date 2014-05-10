@@ -4,6 +4,10 @@ env:
     - TOX_ENV=py27
     - TOX_ENV=py32
 
+matrix:
+    exclude:
+        - env: TOX_ENV=py32
+
 install:
     - pip install --upgrade setuptools
     - pip install tox
