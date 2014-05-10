@@ -21,6 +21,7 @@ import os
 import re
 import sys
 
+from babel.messages import frontend as babel
 from setuptools import setup, find_packages
 from setuptools.command.test import test as TestCommand
 
@@ -77,6 +78,12 @@ setup(
         "console_scripts": [
             "{0}={0}:main".format(package_name),
         ],
+    },
+    cmdclass = {
+        'compile_catalog': babel.compile_catalog,
+        'extract_messages': babel.extract_messages,
+        'init_catalog': babel.init_catalog,
+        'update_catalog': babel.update_catalog
     },
     zip_safe=False
 )

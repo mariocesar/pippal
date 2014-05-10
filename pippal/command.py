@@ -15,18 +15,28 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 """
 
+import os
+import gettext
+
 from optparse import OptionParser
 
-usage = "usage: %prog"
+gettext.bindtextdomain('messages', os.path.join(os.path.dirname(__file__), 'locale'))
+gettext.bind_textdomain_codeset('messages', 'utf8')
+gettext.textdomain('messages')
+gettext.install('messages', localedir=os.path.join(os.path.dirname(__file__), 'locale'), codeset='utf8')
+
+_ = gettext.gettext
+
+usage = _("usage: %prog")
 
 class Command:
     parser = OptionParser(
         usage=usage,
         version='%prog 0.1.dev1',
-        description="With Pippal manage your python packages easily and with style.",
-        epilog=("Contribute to this project, report bugs, ask for features "
-                "and get the latest features visiting: "
-                "https://github.com/mariocesar/pippa.")
+        description=_("With Pippal manage your python packages easily and with style."),
+        epilog=_("Contribute to this project, report bugs, ask for features "
+                 "and get the latest features visiting: "
+                 "https://github.com/mariocesar/pippa.").decode('utf8')
     )
 
     def run(self):
