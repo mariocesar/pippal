@@ -21,6 +21,6 @@ from pippal.command import Command
 __version__ = "0.1.dev1"
 
 
-def main():
+def main(): # pragma: no cover
     command = Command()
     return command.run()
