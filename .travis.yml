@@ -10,6 +10,7 @@ matrix:
 
 install:
     - pip install --upgrade setuptools
+    - pip install --upgrade babel
     - pip install tox
 
 script:
