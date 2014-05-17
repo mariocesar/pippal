@@ -16,3 +16,5 @@ pippal
 
 
 Manage your python packages and virtualenvs with style. Inspired in Cakebrew by Bruno Philipe
+
+![Pippal Last Screenshot](https://raw.githubusercontent.com/mariocesar/pippal/master/screenshot.png)
