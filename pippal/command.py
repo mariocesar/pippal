@@ -19,6 +19,7 @@ import os
 import gettext
 
 from optparse import OptionParser
+from pippal.application import Pippal
 
 gettext.bindtextdomain('messages', os.path.join(os.path.dirname(__file__), 'locale'))
 gettext.bind_textdomain_codeset('messages', 'utf8')
@@ -41,3 +42,5 @@ class Command:
 
     def run(self):
         (options, args) = self.parser.parse_args()
+        app = Pippal()
+        app.run(None)
